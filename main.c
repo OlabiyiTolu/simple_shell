@@ -5,13 +5,19 @@ int main(int tc, char **argv){
     char *lineptr;
     size_t t = 0;
 
-    /* declaring void variables */
+    /* declaring void variables for the tc and argv */
     (void)tc; (void)argv;
 
-    printf("%s", prompt);
-    getline(&lineptr, &t, stdin);
-    printf("%s\n", lineptr);
+    /* creating an infinite loop */
+    while (1){
+        printf("%s", prompt);
+        getline(&lineptr, &t, stdin);
+        printf("%s\n", lineptr);
 
-    free(lineptr);
+        /* code to free memory*/
+        free(lineptr);
+    }
+
+    
     return (0);
 }
